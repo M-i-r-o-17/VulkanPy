@@ -27,8 +27,8 @@ class GameObject(Transform):
             else:
                 self.image = pygame.image.load(self.imagePath).convert_alpha()
 
-                if self.image == None:
-                    self.image = pygame.transform.scale(self.image, self.width, self.height)
+                if not(self.image) == None:
+                    self.image = pygame.transform.scale(self.image, (self.width, self.height))
                 else:
                     self.Error(1, f"Do not find file with path \"{self.imagePath}\"")
                     self.failLoadImage = True
